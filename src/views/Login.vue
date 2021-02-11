@@ -13,16 +13,16 @@
         <small v-if="$v.email.$dirty && !$v.email.required" class="helper-text invalid">Поле Email обязателное</small>
         <small v-else-if="$v.email.$dirty && !$v.email.email" class="helper-text invalid">Введите корректный Email</small>
       </div>
-        <div class="input-field">
-          <input
-            id="password"
-            type="password"
-            v-model.trim="password"
-            :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
-          >
-          <label for="password">Пароль</label>
-          <small v-if="$v.password.$dirty && !$v.password.required" class="helper-text invalid">Поле пароль обязательное</small>
-          <small v-else-if="$v.password.$dirty && !$v.password.minLength" class="helper-text invalid">Минимальная длинна {{$v.password.$params.minLength.min}} символов. Сей час он {{password.length}}</small>
+      <div class="input-field">
+        <input
+          id="password"
+          type="password"
+          v-model.trim="password"
+          :class="{invalid: ($v.password.$dirty && !$v.password.required) || ($v.password.$dirty && !$v.password.minLength)}"
+        >
+        <label for="password">Пароль</label>
+        <small v-if="$v.password.$dirty && !$v.password.required" class="helper-text invalid">Поле пароль обязательное</small>
+        <small v-else-if="$v.password.$dirty && !$v.password.minLength" class="helper-text invalid">Минимальная длинна {{$v.password.$params.minLength.min}} символов. Сей час он {{password.length}}</small>
       </div>
     </div>
     <div class="card-action">
