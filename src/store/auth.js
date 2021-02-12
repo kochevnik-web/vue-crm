@@ -8,6 +8,9 @@ export default {
             } catch (error) {
                 throw(error)
             }
+        },
+        async logout() {
+            await firebase.auth().signOut();
         }
     }
 }
