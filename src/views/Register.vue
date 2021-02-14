@@ -78,7 +78,7 @@ export default {
     agree: {checked: v => v}
   },
   methods: {
-    submitHendler() {
+    async submitHendler() {
       if(this.$v.$invalid){
         this.$v.$touch();
         return;
@@ -90,6 +90,12 @@ export default {
         name: this.name
       }
 
+      try {
+              await this.$store.dispatch('register', formData);
+      } catch (error) {
+        
+      }
+      
       this.$router.push('/');
     }
   }
